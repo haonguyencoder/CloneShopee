@@ -5,9 +5,13 @@
     --text-color: #333;
     --star-gold-color: #FDD836;
     --border-color: #bdbdbd;
+
+
     --header-height: 120px;
     --navbar-height: 34px;
-    --header-width-search-height: calc(var(header-height) - var(navbar-height));
+    --header-width-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
+    --transition: fadeIn ease 0.3s;
 }
 
 * {
@@ -18,20 +22,18 @@ html {
     font-size: 62.5%;
     line-height: 1.6rem;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 
 /* Responsive */
 
-.grid {
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
+.grid__row-wrap-img {
+    display: flex;
 }
 
-.grid__full-width {
-    width: 100%;
+.item-img {
+    margin-top: 32px;
 }
 
 .grid__row {
@@ -47,12 +49,30 @@ html {
     width: 16.6667%;
 }
 
-.grid__column-2-4 {
+
+.grid__column-2-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33.333%;
+}
+
+.grid__column-width-20 {
     padding-left: 5px;
     padding-right: 5px;
     width: 20%;
 }
 
+.grid__column-width-25 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 25%;
+}
+
+.grid__column-width-50 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 50%;
+}
 .grid__column-10 {
     padding-left: 5px;
     padding-right: 5px;
@@ -106,13 +126,20 @@ html {
 .modal__body {
     --growth-from: 0.7;
     --growth-to: 1;
+    z-index: 1;
     background-color: var(--white-color);
     margin: auto;
     position: relative;
-    z-index: 1;
     border-radius: 10px;
     animation: growth linear 0.1s;
 }
+
+/* .modal__img-container {
+    position: absolute;
+    z-index: 1;
+    height: 500px;
+    width: 300px;
+} */
 
 
 /* Button-style */
@@ -147,6 +174,7 @@ html {
 /* Selection */
 
 .select-input {
+    z-index: 1;
     height: 36px;
     min-width: 202px;
     background-color: var(--white-color);
@@ -227,16 +255,14 @@ html {
     --height: 30px;
     display: block;
     text-decoration: none;
+    font-weight: 300;
     color: #939393;
     min-width: 40px;
+    font-size: 2rem;
     height: var(--height);
     text-align: center;
     line-height: var(--height);
     border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
 }
 
 .pagination__link:hover {
